@@ -1,0 +1,11 @@
+npm init -y
+npm i -D typescript ts-loader
+npm i -D react react-dom
+npm i -D @types/react
+npm i -D webpack webpack-cli
+npm i -D style-loader css-loader
+
+npm i -g webpack
+npm i -g webpack-cli
+
+npx sb init --builder webpack5
