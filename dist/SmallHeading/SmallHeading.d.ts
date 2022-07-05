@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC } from "react";
 interface ISmallHeading {
-    text: string;
-    customMarginTop?: string;
-    customMarginBottom?: string;
+  text: string;
+  customMarginTop?: string;
+  customMarginBottom?: string;
 }
 declare const SmallHeading: FC<ISmallHeading>;
 export default SmallHeading;

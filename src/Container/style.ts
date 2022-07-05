@@ -6,6 +6,6 @@ const ContainerBox = styled.div`
   margin-right: auto;
   padding: 0 15px;
   box-sizing: border-box;
-`
+`;
 
 export default ContainerBox;
