@@ -10,7 +10,6 @@ export default {
   component: CardInfo,
 } as ComponentMeta<typeof CardInfo>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof CardInfo> = (args) => <CardInfo {...args} />;
 
 export const CardInfoDefault = Template.bind({});
