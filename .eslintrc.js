@@ -11,12 +11,14 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "eslint-plugin-react"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
-  ignorePatterns: ['**/dist/*', '**/webpack.config.js', '**/.eslintrc.js'],
-  rules: {},
+  ignorePatterns: ["**/dist/*", "**/webpack.config.js", "**/.eslintrc.js"],
+  rules: {
+    "no-console": 2,
+  },
 };

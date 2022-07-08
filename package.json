@@ -7,9 +7,13 @@
     "pub": "webpack && npm version patch && npm publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint --ext .js,.ts .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "prepare": "husky install"
+    "lint": "eslint --ext .js,.ts,.tsx,.jsx .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint . && git add -A ."
+    }
   },
   "keywords": [],
   "author": "ui-kit-io",
