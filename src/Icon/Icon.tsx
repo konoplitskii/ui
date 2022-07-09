@@ -20,6 +20,7 @@ const Icon:FC<IIcon> = ({icon, width, height, color, className})=> {
         const _Icon = Icons[icon];
         return <_Icon width={width} height={height} color={color} className={className} />
     } else {
+        // eslint-disable-next-line no-console
         console.error(`Icon ${icon} not found`);
         return null;
     }

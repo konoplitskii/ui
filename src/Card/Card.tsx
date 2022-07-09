@@ -10,7 +10,12 @@ interface Card {
     sum?:string
 }
 
-const Card:FC<Card> = ({imgUrl='https://wosergame.ucoz.com/14871_1.png',title,subtitle,price,sum})=> {
+const Card:FC<Card> = ({
+    imgUrl='https://wosergame.ucoz.com/14871_1.png',
+    title,
+    subtitle,
+    price,
+})=> {
     return (
         <CardBox>
             <div className="box-card-img-wrapper">

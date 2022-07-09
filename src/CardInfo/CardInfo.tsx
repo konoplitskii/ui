@@ -5,13 +5,11 @@ import Paragraph from "../Paragraph/Paragraph";
 import Icon from "../Icon/Icon";
 
 interface ICardInfo {
-    title:string,
-    text:string,
-    icon:string
+    title: string,
+    text: string,
+    icon: string
 }
 
-console.log('here');
-console.log('here');
 const CardInfo:FC<ICardInfo> = ({title,text,icon}) => {
     return (
         <CardInfoBox>

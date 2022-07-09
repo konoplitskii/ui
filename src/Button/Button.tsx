@@ -11,12 +11,11 @@ export interface Button {
 }
 
 const Button: FC<Button> = ({
-                                children,
-                                size='large',
-                                primary= false,
-                                onClick,
-                                customMarginTop,
-                                ...props
+    children,
+    size='large',
+    primary= false,
+    onClick,
+    customMarginTop
 }) => {
     return (
         <ButtonST size={size} primary={primary} onClick={onClick} customMarginTop={customMarginTop}>
