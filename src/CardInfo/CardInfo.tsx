@@ -11,6 +11,7 @@ interface ICardInfo {
 }
 
 console.log('here');
+console.log('here');
 const CardInfo:FC<ICardInfo> = ({title,text,icon}) => {
     return (
         <CardInfoBox>

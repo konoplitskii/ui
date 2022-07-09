@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/vlad/.nvm/versions/node/v16.6.0/bin/node /Users/vlad/.nvm/versions/node/v16.6.0/bin/yarn add eslint-config-prettie -s
+  /Users/vlad/.nvm/versions/node/v16.6.0/bin/node /Users/vlad/.nvm/versions/node/v16.6.0/bin/yarn
 
 PATH: 
   /opt/homebrew/bin:/Users/vlad/.nvm/versions/node/v16.6.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,30 +14,31 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.npmjs.org/eslint-config-prettie: Not found
-      at Request.params.callback [as _callback] (/Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:67029:18)
-      at Request.self.callback (/Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:140883:22)
-      at Request.emit (node:events:394:28)
-      at Request.<anonymous> (/Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:141855:10)
-      at Request.emit (node:events:394:28)
-      at IncomingMessage.<anonymous> (/Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:141777:12)
-      at Object.onceWrapper (node:events:513:28)
-      at IncomingMessage.emit (node:events:406:35)
-      at endReadableNT (node:internal/streams/readable:1331:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  SyntaxError: /Users/vlad/pet/ui/package.json: Unexpected token } in JSON at position 407
+      at JSON.parse (<anonymous>)
+      at /Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/vlad/.nvm/versions/node/v16.6.0/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
     "name": "ui-kit-io",
     "version": "1.0.7",
+    "private": true,
     "description": "",
     "main": "./dist/index.js",
     "scripts": {
       "pub": "webpack && npm version patch && npm publish",
       "storybook": "start-storybook -p 6006",
       "build-storybook": "build-storybook",
-      "lint": "eslint --ext .js,.ts .",
-      "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+      "lint": "eslint --ext .js,.ts,.tsx,.jsx .",
+      "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run lint . && git add -A ."
+      }
     },
     "keywords": [],
     "author": "ui-kit-io",
@@ -64,7 +65,8 @@ npm manifest:
       "ts-loader": "^9.3.0",
       "typescript": "^4.6.4",
       "webpack": "^5.72.0",
-      "webpack-cli": "^4.9.2"
+      "webpack-cli": "^4.9.2",
+      "husky": "^4.2.1"
     },
     "peerDependencies": {
       "react": "*",
@@ -77,6 +79,7 @@ npm manifest:
       "@typescript-eslint/eslint-plugin": "^5.30.0",
       "@typescript-eslint/parser": "^5.30.0",
       "eslint": "^8.18.0",
+      "eslint-config-prettier": "^8.5.0",
       "prettier": "^2.7.1",
       "styled-components": "^5.3.5"
     }
@@ -5201,6 +5204,11 @@ Lockfile:
     optionalDependencies:
       source-map "~0.6.1"
   
+  eslint-config-prettier@^8.5.0:
+    version "8.5.0"
+    resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
+    integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
+  
   eslint-plugin-react@^7.30.1:
     version "7.30.1"
     resolved "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.30.1.tgz#2be4ab23ce09b5949c6631413ba64b2810fd3e22"
@@ -6368,6 +6376,11 @@ Lockfile:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
     integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+  
+  husky@^8.0.0:
+    version "8.0.1"
+    resolved "https://registry.npmjs.org/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
+    integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
   
   iconv-lite@0.4.24:
     version "0.4.24"
